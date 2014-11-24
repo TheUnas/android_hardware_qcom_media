@@ -68,11 +68,7 @@ ifeq ($(TARGET_USES_ION),true)
 libmm-venc-def += -DUSE_ION
 endif
 
-<<<<<<< HEAD:mm-video-v4l2/vidc/venc/Android.mk
 venc-inc       = $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
-=======
-venc-inc       := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
->>>>>>> fb6de73... media: Use kernel headers:mm-video-legacy/vidc/venc.mk
 
 libmm-venc-def += -D_ANDROID_ICS_
 # ---------------------------------------------------------------------------------
@@ -93,10 +89,7 @@ libmm-venc-inc      += frameworks/native/include/media/openmax
 libmm-venc-inc      += $(call project-path-for,qcom-media)/libc2dcolorconvert
 libmm-venc-inc      += $(call project-path-for,qcom-display)/libcopybit
 libmm-venc-inc      += frameworks/av/include/media/stagefright
-<<<<<<< HEAD:mm-video-v4l2/vidc/venc/Android.mk
 libmm-venc-inc      += $(TARGET_OUT_HEADERS)/qcom/display/
-=======
->>>>>>> fb6de73... media: Use kernel headers:mm-video-legacy/vidc/venc.mk
 libmm-venc-inc      += $(venc-inc)
 
 LOCAL_MODULE                    := libOmxVenc
@@ -116,15 +109,9 @@ else
 LOCAL_SRC_FILES   += src/video_encoder_device.cpp
 endif
 
-<<<<<<< HEAD:mm-video-v4l2/vidc/venc/Android.mk
 LOCAL_ADDITIONAL_DEPENDENCIES  := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 LOCAL_SRC_FILES   += ../common/src/extra_data_handler.cpp
-=======
-LOCAL_SRC_FILES   += common/src/extra_data_handler.cpp
->>>>>>> fb6de73... media: Use kernel headers:mm-video-legacy/vidc/venc.mk
-
-LOCAL_ADDITIONAL_DEPENDENCIES  := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 include $(BUILD_SHARED_LIBRARY)
 
@@ -137,13 +124,8 @@ include $(CLEAR_VARS)
 mm-venc-test720p-inc            := $(TARGET_OUT_HEADERS)/mm-core
 mm-venc-test720p-inc            += $(LOCAL_PATH)/inc
 mm-venc-test720p-inc            += $(OMX_VIDEO_PATH)/vidc/common/inc
-<<<<<<< HEAD:mm-video-v4l2/vidc/venc/Android.mk
 mm-venc-test720p-inc            += $(call project-path-for,qcom-media)/mm-core/inc
 mm-venc-test720p-inc            += $(call project-path-for,qcom-display)/libgralloc
-=======
-mm-venc-test720p-inc            += $(call project-path-for,qcom-media)/$(TARGET_BOARD_PLATFORM)/mm-core/inc
-mm-venc-test720p-inc            += $(TARGET_OUT_HEADERS)/qcom/display
->>>>>>> fb6de73... media: Use kernel headers:mm-video-legacy/vidc/venc.mk
 mm-venc-test720p-inc            += $(venc-inc)
 
 LOCAL_MODULE                    := mm-venc-omx-test720p
@@ -169,12 +151,8 @@ include $(BUILD_EXECUTABLE)
 
 include $(CLEAR_VARS)
 
-<<<<<<< HEAD:mm-video-v4l2/vidc/venc/Android.mk
 venc-test-inc                   += $(LOCAL_PATH)/inc
 venc-test-inc                   += $(call project-path-for,qcom-display)/libgralloc
-=======
-venc-test-inc                   += $(LOCAL_PATH)/venc/inc
->>>>>>> fb6de73... media: Use kernel headers:mm-video-legacy/vidc/venc.mk
 venc-test-inc                   += $(venc-inc)
 
 LOCAL_MODULE                    := mm-video-encdrv-test

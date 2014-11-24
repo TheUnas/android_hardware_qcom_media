@@ -80,15 +80,11 @@ ifeq ($(TARGET_USES_ION),true)
 libOmxVdec-def += -DUSE_ION
 endif
 
-<<<<<<< HEAD:mm-video-v4l2/vidc/vdec/Android.mk
 ifneq ($(call is-platform-sdk-version-at-least,18),true)
 libOmxVdec-def += -DANDROID_JELLYBEAN_MR1=1
 endif
 
 vdec-inc          = $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
-=======
-vdec-inc       = $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
->>>>>>> fb6de73... media: Use kernel headers:mm-video-v4l2/vidc/vdec.mk
 
 # ---------------------------------------------------------------------------------
 # 			Make the Shared library (libOmxVdec)
@@ -199,13 +195,7 @@ LOCAL_SRC_FILES         += ../common/src/extra_data_handler.cpp
 LOCAL_SRC_FILES         += ../common/src/vidc_color_converter.cpp
 LOCAL_ADDITIONAL_DEPENDENCIES  := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
-<<<<<<< HEAD:mm-video-v4l2/vidc/vdec/Android.mk
 include $(BUILD_SHARED_LIBRARY)
-=======
-LOCAL_ADDITIONAL_DEPENDENCIES  := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
-
-#include $(BUILD_SHARED_LIBRARY)
->>>>>>> fb6de73... media: Use kernel headers:mm-video-v4l2/vidc/vdec.mk
 
 endif
 endif
@@ -252,13 +242,7 @@ LOCAL_SRC_FILES                 := src/message_queue.c
 LOCAL_SRC_FILES                 += test/decoder_driver_test.c
 LOCAL_ADDITIONAL_DEPENDENCIES  := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
-<<<<<<< HEAD:mm-video-v4l2/vidc/vdec/Android.mk
 include $(BUILD_EXECUTABLE)
-=======
-LOCAL_ADDITIONAL_DEPENDENCIES  := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
-
-#include $(BUILD_EXECUTABLE)
->>>>>>> fb6de73... media: Use kernel headers:mm-video-v4l2/vidc/vdec.mk
 
 endif #BUILD_TINY_ANDROID
 
